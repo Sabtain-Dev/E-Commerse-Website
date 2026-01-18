@@ -1,0 +1,210 @@
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    background-image: url('images/1.jpg'); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+}
+
+.left-section {
+    background-color: #0000005b;
+    color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.with-line::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: white;
+    margin: 0.5rem auto 0;
+}
+
+.with-line1::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.568);
+    margin: 0.5rem auto 0;
+}
+
+.left-section h1 {
+    font-size: 3rem;
+}
+
+.left-section h2 {
+    font-size: 1.7rem;
+}
+
+.left-section nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-section nav ul li {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.left-section nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    transition: text-decoration 0.3s;
+}
+
+.left-section nav ul li a i {
+    margin-right: 0.6rem;
+    font-size: 1.2rem; /* Adjust size to match the text */
+}
+
+.left-section nav ul li a:hover {
+    text-decoration: none;
+}
+
+.right-section {
+    background-color: #0000005b;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.253);
+    padding: 2rem;
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 238, 0.37);
+    border: 0px solid rgba(255, 255, 255, 0.18);
+}
+
+.login-box h2 {
+    margin-bottom: 0.5rem;
+}
+
+.login-box h3 {
+    margin-bottom: 1.5rem;
+    color: #000000;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.input-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon i {
+    position: absolute;
+    left: 10px;
+    color: #999;
+}
+
+.input-icon input {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+    border: 1px solid #ccccccb4;
+    border-radius: 13px;
+    font-family: 'Poppins', 'Times New Roman', Times, serif;
+}
+
+button[type="submit"] {
+    background-color: #3fca33;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #459e3d;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.social-login button {
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: transform 0.3s;
+}
+
+.social-login button:hover {
+    transform: scale(1.5);
+}
+
+.social-login button img {
+    width: 100%;
+    height: 70%;
+    border-radius: 50%;
+    align-items: end;
+}
+
+.social-login .google {
+    background-color: #cecece;
+    color: white;
+}
+
+.social-login .facebook {
+    background-color: #78afe4;
+    color: white;
+}
+
+.social-login .apple {
+    background-color: black;
+    color: white;
+}
+
+.login-box p {
+    margin-top: 1rem;
+    color: #000000;
+}
+
+.login-box p a {
+    color: #fd8522;
+    text-decoration: none;
+}
+
+.login-box p a:hover {
+    text-decoration: underline;
+}
