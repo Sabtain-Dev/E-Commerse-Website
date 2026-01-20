@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Personalized Style Recommendations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .product-card {
+      transition: all 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .color-swatch {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      border: 1px solid #e5e7eb;
+      cursor: pointer;
+    }
+    .suggestion-item {
+      transition: all 0.2s ease;
+    }
+    .suggestion-item:hover {
+      transform: scale(1.02);
+      background-color: #f8fafc;
+    }
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Header Section -->
+<header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-6 shadow-lg">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+    <div class="flex items-center mb-4 md:mb-0">
+      <svg class="h-8 w-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      </svg>
+      <h1 class="text-2xl font-bold">Your Style Profile</h1>
+    </div>
+    <div class="flex items-center space-x-4">
+      <a href="index.html" class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-gray-100 font-medium flex items-center">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Back to Shop
+      </a>
+      <button id="retakeQuizBtn" class="border border-white text-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-600 transition font-medium">
+        Retake Quiz
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Style Summary Section -->
+<section class="bg-white py-8 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <div class="mb-6 md:mb-0">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">✨ Your Personalized Selections</h2>
+        <p class="text-gray-600">Curated based on your style preferences</p>
+      </div>
+      <div id="styleSummary" class="flex flex-wrap gap-2">
+        <!-- Style tags will be inserted here -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto py-8 px-6">
+  <!-- Filter Bar -->
+  <div class="flex flex-col md:flex-row justify-between items-center mb-8 bg-white p-4 rounded-lg shadow">
+    <div class="mb-4 md:mb-0">
+      <h3 class="font-medium text-gray-700">Showing <span id="productCount">0</span> personalized items</h3>
+    </div>
+    <div class="flex items-center space-x-4">
+      <div class="relative">
+        <select id="sortBy" class="appearance-none bg-gray-50 border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+          <option value="relevance">Sort by: Relevance</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="popular">Most Popular</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+          </svg>
+        </div>
+      </div>
+      <button id="refreshBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+        Refresh
+      </button>
+    </div>
+  </div>
+
+  <!-- Product Grid -->
+  <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <!-- Product cards will be inserted here -->
+  </div>
+
+  <!-- Loading Skeleton -->
+  <div id="loadingSkeleton" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <!-- Loading placeholders -->
+  </div>
+
+  <!-- Empty State -->
+  <div id="emptyState" class="hidden text-center py-12">
+    <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <h3 class="mt-2 text-lg font-medium text-gray-900">No products found</h3>
+    <p class="mt-1 text-gray-500">We couldn't find any products matching your preferences.</p>
+    <div class="mt-6">
+      <button id="retakeEmptyBtn" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none">
+        Retake Style Quiz
+      </button>
+    </div>
+  </div>
+</main>
+
+<!-- Product Modal Template -->
+<div id="modalTemplate" class="hidden">
+  <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="relative">
+        <!-- Modal content will be inserted here -->
+        <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 z-10">
+          <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ====================== Product Data ======================
+const productDatabase = {
+  "Classic Blazer": {
+    id: "p001",
+    price: 89.99,
+    originalPrice: 120.00,
+    image: "images/products/blazer-black.jpg",
+    colors: {
+      "Black": { image: "images/products/blazer-black.jpg", hex: "#2D3748" },
+      "Navy": { image: "images/products/blazer-navy.jpg", hex: "#1E365D" },
+      "Gray": { image: "images/products/blazer-gray.jpg", hex: "#718096" }
+    },
+    category: ["work", "classic", "formal"],
+    style: ["classic", "minimalist"],
+    tags: ["professional", "tailored", "timeless"],
+    rating: 4.7,
+    reviewCount: 128,
+    details: [
+      "Material: 65% Wool, 35% Polyester",
+      "Fit: Slim fit",
+      "Closure: Single button",
+      "Pockets: Flap chest pockets",
+      "Lining: Full lining",
+      "Care: Dry clean only"
+    ],
+    aiSuggestions: [
+      { 
+        title: "White Button-Up Shirt", 
+        image: "images/products/shirt-white.jpg",
+        reason: "Perfect pairing for a professional look"
+      },
+      { 
+        title: "Black Dress Pants", 
+        image: "images/products/pants-black.jpg",
+        reason: "Completes your office ensemble"
+      }
+    ]
+  },
+  "Bohemian Maxi Dress": {
+    id: "p002",
+    price: 49.99,
+    originalPrice: 69.99,
+    image: "images/products/dress-boho.jpg",
+    colors: {
+      "Coral": { image: "images/products/dress-boho.jpg", hex: "#F68787" },
+      "Teal": { image: "images/products/dress-boho-teal.jpg", hex: "#4FD1C5" },
+      "Mustard": { image: "images/products/dress-boho-mustard.jpg", hex: "#D69E2E" }
+    },
+    category: ["special", "weekend", "boho"],
+    style: ["boho", "romantic"],
+    tags: ["flowy", "feminine", "summer"],
+    rating: 4.5,
+    reviewCount: 86,
+    details: [
+      "Material: 100% Rayon",
+      "Fit: Loose fit",
+      "Length: Maxi",
+      "Neckline: V-neck",
+      "Sleeves: Short sleeves",
+      "Care: Machine wash cold"
+    ],
+    aiSuggestions: [
+      { 
+        title: "Leather Sandals", 
+        image: "images/products/sandals-brown.jpg",
+        reason: "Complements the boho vibe"
+      },
+      { 
+        title: "Fringe Bag", 
+        image: "images/products/bag-fringe.jpg",
+        reason: "Adds to the free-spirited look"
+      }
+    ]
+  },
+  // More products would be defined here...
+  "Minimalist White Sneakers": {
+    id: "p003",
+    price: 79.99,
+    originalPrice: 99.99,
+    image: "images/products/sneakers-white.jpg",
+    colors: {
+      "White": { image: "images/products/sneakers-white.jpg", hex: "#FFFFFF" },
+      "Black": { image: "images/products/sneakers-black.jpg", hex: "#000000" }
+    },
+    category: ["everyday", "weekend"],
+    style: ["minimalist", "casual"],
+    tags: ["versatile", "comfortable", "clean"],
+    rating: 4.8,
+    reviewCount: 215,
+    details: [
+      "Material: Leather upper, rubber sole",
+      "Fit: True to size",
+      "Closure: Lace-up",
+      "Insole: Cushioned",
+      "Care: Wipe clean with damp cloth"
+    ],
+    aiSuggestions: [
+      { 
+        title: "Black Skinny Jeans", 
+        image: "images/products/jeans-black.jpg",
+        reason: "Creates a sleek, modern look"
+      },
+      { 
+        title: "Oversized Sweater", 
+        image: "images/products/sweater-gray.jpg",
+        reason: "Perfect for casual weekend outfits"
+      }
+    ]
+  },
+  "Edgy Leather Jacket": {
+    id: "p004",
+    price: 129.99,
+    originalPrice: 199.99,
+    image: "images/products/jacket-leather.jpg",
+    colors: {
+      "Black": { image: "images/products/jacket-leather.jpg", hex: "#1A202C" },
+      "Brown": { image: "images/products/jacket-leather-brown.jpg", hex: "#744210" }
+    },
+    category: ["special", "weekend"],
+    style: ["edgy", "casual"],
+    tags: ["bold", "statement", "cool"],
+    rating: 4.6,
+    reviewCount: 92,
+    details: [
+      "Material: Faux leather",
+      "Fit: Slim fit",
+      "Closure: Zipper",
+      "Pockets: 2 side pockets",
+      "Lining: Polyester",
+      "Care: Spot clean only"
+    ],
+    aiSuggestions: [
+      { 
+        title: "Graphic Tee", 
+        image: "images/products/tee-graphic.jpg",
+        reason: "Adds to the rebellious vibe"
+      },
+      { 
+        title: "Ripped Jeans", 
+        image: "images/products/jeans-ripped.jpg",
+        reason: "Completes the edgy look"
+      }
+    ]
+  },
+  "Romantic Floral Dress": {
+    id: "p005",
+    price: 59.99,
+    originalPrice: 79.99,
+    image: "images/products/dress-floral.jpg",
+    colors: {
+      "Pink Floral": { image: "images/products/dress-floral.jpg", hex: "#F687B3" },
+      "Blue Floral": { image: "images/products/dress-floral-blue.jpg", hex: "#63B3ED" }
+    },
+    category: ["special", "weekend"],
+    style: ["romantic", "boho"],
+    tags: ["feminine", "floral", "spring"],
+    rating: 4.4,
+    reviewCount: 67,
+    details: [
+      "Material: 95% Cotton, 5% Spandex",
+      "Fit: Fitted waist",
+      "Length: Midi",
+      "Neckline: Square neck",
+      "Sleeves: Puff sleeves",
+      "Care: Machine wash cold"
+    ],
+    aiSuggestions: [
+      { 
+        title: "Strappy Heels", 
+        image: "images/products/heels-strappy.jpg",
+        reason: "Elevates the romantic look"
+      },
+      { 
+        title: "Delicate Necklace", 
+        image: "images/products/necklace-gold.jpg",
+        reason: "Adds a feminine touch"
+      }
+    ]
+  }
+};
+
+// ====================== Quiz Results Processing ======================
+let userPreferences = {};
+let filteredProducts = [];
+
+// Load quiz results from session storage
+function loadQuizResults() {
+  const storedResults = sessionStorage.getItem("styleQuizAnswers");
+  if (storedResults) {
+    try {
+      userPreferences = JSON.parse(storedResults);
+      generateStyleSummary();
+      filterProducts();
+    } catch (e) {
+      showEmptyState();
+    }
+  } else {
+    showEmptyState();
+  }
+}
+
+// Generate style summary tags
+function generateStyleSummary() {
+  const styleSummaryEl = document.getElementById("styleSummary");
+  styleSummaryEl.innerHTML = "";
+  
+  // Get all unique tags from answers
+  const allTags = [];
+  for (const [key, answer] of Object.entries(userPreferences)) {
+    const tags = getTagsForAnswer(answer.value);
+    allTags.push(...tags);
+  }
+  
+  // Get top 6 unique tags
+  const uniqueTags = [...new Set(allTags)].slice(0, 6);
+  
+  // Display tags
+  uniqueTags.forEach(tag => {
+    const tagEl = document.createElement("span");
+    tagEl.className = "bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full flex items-center";
+    tagEl.innerHTML = `
+      <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+      </svg>
+      ${tag}
+    `;
+    styleSummaryEl.appendChild(tagEl);
+  });
+}
+
+// Get tags for a specific answer value
+function getTagsForAnswer(value) {
+  const tagsMap = {
+    "casual": ["Relaxed", "Comfortable", "Easy-going"],
+    "boho": ["Free-spirited", "Eclectic", "Artistic"],
+    "minimalist": ["Clean", "Simple", "Sophisticated"],
+    "classic": ["Timeless", "Elegant", "Polished"],
+    "edgy": ["Bold", "Urban", "Trendy"],
+    "romantic": ["Feminine", "Delicate", "Soft"],
+    "neutrals": ["Versatile", "Chic", "Modern"],
+    "bright": ["Energetic", "Playful", "Confident"],
+    "pastels": ["Soft", "Sweet", "Gentle"],
+    "earth": ["Natural", "Organic", "Warm"],
+    "jewel": ["Rich", "Luxurious", "Deep"],
+    "work": ["Professional", "Tailored", "Put-together"],
+    "everyday": ["Versatile", "Practical", "Essential"],
+    "special": ["Glamorous", "Dressy", "Statement"],
+    "weekend": ["Relaxed", "Comfy", "Easy"],
+    "athleisure": ["Sporty", "Active", "Modern"],
+    "low": ["Budget-savvy", "Value-conscious", "Smart"],
+    "mid": ["Quality-focused", "Balanced", "Curated"],
+    "high": ["Luxury", "Investment", "Premium"],
+    "mixed": ["Varied", "Selective", "Thoughtful"],
+    "bags": ["Practical", "Organized", "Complete"],
+    "jewelry": ["Detailed", "Accented", "Finished"],
+    "shoes": ["Grounded", "Stylish", "Foundation"],
+    "hats": ["Playful", "Sun-safe", "Top-off"],
+    "scarves": ["Versatile", "Layered", "Cozy"],
+    "none": ["Essential", "Minimal", "Streamlined"]
+  };
+  
+  return tagsMap[value] || [];
+}
+
+// Filter products based on user preferences
+function filterProducts() {
+  // Convert product database to array
+  const allProducts = Object.entries(productDatabase).map(([name, data]) => ({
+    name,
+    ...data
+  }));
+  
+  // If no preferences, show all products
+  if (Object.keys(userPreferences).length === 0) {
+    filteredProducts = allProducts;
+    renderProducts();
+    return;
+  }
+  
+  // Score products based on preferences
+  const scoredProducts = allProducts.map(product => {
+    let score = 0;
+    
+    // Check style matches
+    if (userPreferences.style) {
+      const stylePref = userPreferences.style.value;
+      if (product.style && product.style.includes(stylePref)) {
+        score += 30 * userPreferences.style.weight;
+      }
+    }
+    
+    // Check occasion matches
+    if (userPreferences.occasion) {
+      const occasionPref = userPreferences.occasion.value;
+      if (product.category && product.category.includes(occasionPref)) {
+        score += 25 * userPreferences.occasion.weight;
+      }
+    }
+    
+    // Check budget matches
+    if (userPreferences.budget) {
+      const budgetPref = userPreferences.budget.value;
+      if (budgetPref === "low" && product.price < 50) {
+        score += 20 * userPreferences.budget.weight;
+      } else if (budgetPref === "mid" && product.price >= 50 && product.price < 100) {
+        score += 20 * userPreferences.budget.weight;
+      } else if (budgetPref === "high" && product.price >= 100) {
+        score += 20 * userPreferences.budget.weight;
+      } else if (budgetPref === "mixed") {
+        score += 10; // Partial match for mixed
+      }
+    }
+    
+    // Check accessory matches
+    if (userPreferences.accessories) {
+      const accessoryPref = userPreferences.accessories.value;
+      if (product.tags && product.tags.some(tag => tag.toLowerCase().includes(accessoryPref))) {
+        score += 15 * userPreferences.accessories.weight;
+      }
+    }
+    
+    // Check color preferences
+    if (userPreferences.color) {
+      const colorPref = userPreferences.color.value;
+      if (colorPref === "neutrals" && product.name.toLowerCase().includes("black") || 
+          product.name.toLowerCase().includes("white") || 
+          product.name.toLowerCase().includes("gray") || 
+          product.name.toLowerCase().includes("beige")) {
+        score += 10 * userPreferences.color.weight;
+      }
+      // Similar checks for other color preferences...
+    }
+    
+    return { ...product, score };
+  });
+  
+  // Sort by score and get top products
+  filteredProducts = scoredProducts
+    .sort((a, b) => b.score - a.score)
+    .filter(p => p.score > 30) // Only show products with significant match
+    .slice(0, 12); // Limit to 12 products
+  
+  if (filteredProducts.length === 0) {
+    showEmptyState();
+  } else {
+    renderProducts();
+  }
+}
+
+// Render products to the grid
+function renderProducts() {
+  const productsGrid = document.getElementById("productsGrid");
+  const loadingSkeleton = document.getElementById("loadingSkeleton");
+  const productCountEl = document.getElementById("productCount");
+  
+  // Show loading skeleton
+  productsGrid.innerHTML = "";
+  loadingSkeleton.innerHTML = "";
+  loadingSkeleton.classList.remove("hidden");
+  
+  // Hide skeleton and show products after short delay (simulate load)
+  setTimeout(() => {
+    loadingSkeleton.classList.add("hidden");
+    
+    // Update product count
+    productCountEl.textContent = filteredProducts.length;
+    
+    // Render each product
+    filteredProducts.forEach((product, index) => {
+      const card = document.createElement("div");
+      card.className = `product-card bg-white rounded-xl shadow-md overflow-hidden fade-in`;
+      card.style.animationDelay = `${index * 0.1}s`;
+      
+      // Get first color for main image
+      const firstColor = Object.keys(product.colors)[0];
+      const mainImage = product.colors[firstColor].image;
+      
+      card.innerHTML = `
+        <div class="relative group">
+          <div class="aspect-square bg-gray-100 overflow-hidden">
+            <img src="${mainImage}" alt="${product.name}" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
+          </div>
+          ${product.originalPrice ? `
+            <div class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
+              ${Math.round((1 - product.price / product.originalPrice) * 100)}% OFF
+            </div>
+          ` : ''}
+          <button class="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 opacity-0 group-hover:opacity-100 transition" onclick="quickAddToCart('${product.id}')">
+            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+          </button>
+        </div>
+        <div class="p-4">
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="font-bold text-gray-800">${product.name}</h3>
+            <div class="flex items-center">
+              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <span class="text-sm ml-1">${product.rating}</span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-500 mb-2">${product.tags ? product.tags.slice(0, 2).join(" • ") : ""}</p>
+          
+          <div class="flex items-center justify-between mt-3">
+            <div>
+              <span class="font-bold text-gray-900">$${product.price.toFixed(2)}</span>
+              ${product.originalPrice ? `
+                <span class="text-sm text-gray-500 line-through ml-1">$${product.originalPrice.toFixed(2)}</span>
+              ` : ''}
+            </div>
+            <div>
+              ${Object.keys(product.colors).map(color => `
+                <span class="color-swatch" style="background-color: ${product.colors[color].hex}" 
+                  title="${color}" onclick="changeProductImage(this, '${product.id}', '${product.colors[color].image}')"></span>
+              `).join("")}
+            </div>
+          </div>
+          
+          <div class="mt-4 flex flex-col gap-2">
+            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-sm font-medium transition"
+              onclick="addToCart('${product.id}')">
+              Add to Cart
+            </button>
+            <button class="w-full border border-gray-300 hover:bg-gray-50 text-gray-700 py-2 rounded-lg text-sm font-medium transition"
+              onclick="openProductModal('${product.id}')">
+              View Details
+            </button>
+          </div>
+        </div>
+      `;
+      
+      productsGrid.appendChild(card);
+    });
+  }, 800);
+}
+
+// Show empty state
+function showEmptyState() {
+  document.getElementById("productsGrid").innerHTML = "";
+  document.getElementById("loadingSkeleton").classList.add("hidden");
+  document.getElementById("emptyState").classList.remove("hidden");
+}
+
+// Open product modal
+function openProductModal(productId) {
+  const product = filteredProducts.find(p => p.id === productId);
+  if (!product) return;
+  
+  const modalTemplate = document.getElementById("modalTemplate");
+  const modalClone = modalTemplate.cloneNode(true);
+  modalClone.id = "productModal";
+  modalClone.classList.remove("hidden");
+  
+  // Get first color for main image
+  const firstColor = Object.keys(product.colors)[0];
+  
+  // Build modal content
+  const modalContent = `
+    <div class="p-6">
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="md:w-1/2">
+          <div class="sticky top-0">
+            <div class="bg-gray-100 rounded-lg overflow-hidden mb-4">
+              <img id="modalMainImage" src="${product.colors[firstColor].image}" alt="${product.name}" class="w-full h-auto">
+            </div>
+            <div class="flex gap-2 flex-wrap">
+              ${Object.entries(product.colors).map(([color, data]) => `
+                <button onclick="changeModalImage('${data.image}')" 
+                  class="border-2 ${color === firstColor ? 'border-blue-500' : 'border-transparent'} rounded-lg overflow-hidden hover:border-blue-300 transition">
+                  <img src="${data.image}" alt="${color}" class="w-16 h-16 object-cover">
+                </button>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+        
+        <div class="md:w-1/2">
+          <h2 class="text-2xl font-bold text-gray-800 mb-2">${product.name}</h2>
+          
+          <div class="flex items-center mb-4">
+            <div class="flex items-center mr-4">
+              ${Array.from({ length: 5 }).map((_, i) => `
+                <svg class="w-5 h-5 ${i < Math.floor(product.rating) ? 'text-yellow-400' : 'text-gray-300'}" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              `).join("")}
+              <span class="text-sm text-gray-500 ml-1">${product.rating} (${product.reviewCount} reviews)</span>
+            </div>
+            ${product.originalPrice ? `
+              <span class="bg-red-100 text-red-800 text-xs font-medium px-2 py-0.5 rounded">${Math.round((1 - product.price / product.originalPrice) * 100)}% OFF</span>
+            ` : ''}
+          </div>
+          
+          <div class="mb-6">
+            <span class="text-3xl font-bold text-gray-900">$${product.price.toFixed(2)}</span>
+            ${product.originalPrice ? `
+              <span class="text-lg text-gray-500 line-through ml-2">$${product.originalPrice.toFixed(2)}</span>
+            ` : ''}
+          </div>
+          
+          <div class="mb-6">
+            <h3 class="font-semibold text-gray-800 mb-2">Color</h3>
+            <div class="flex gap-3">
+              ${Object.entries(product.colors).map(([color, data]) => `
+                <button onclick="changeModalImage('${data.image}')" 
+                  class="flex items-center border-2 ${color === firstColor ? 'border-blue-500' : 'border-gray-200'} rounded-lg px-3 py-2 hover:border-blue-300 transition">
+                  <span class="color-swatch" style="background-color: ${data.hex}"></span>
+                  <span class="ml-2 text-sm">${color}</span>
+                </button>
+              `).join("")}
+            </div>
+          </div>
+          
+          <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium mb-4 transition"
+            onclick="addToCart('${product.id}')">
+            Add to Cart
+          </button>
+          
+          <div class="border-t border-gray-200 pt-4 mb-6">
+            <h3 class="font-semibold text-gray-800 mb-2">Details</h3>
+            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+              ${product.details.map(detail => `<li>${detail}</li>`).join("")}
+            </ul>
+          </div>
+          
+          ${product.aiSuggestions ? `
+            <div class="border-t border-gray-200 pt-4">
+              <h3 class="font-semibold text-gray-800 mb-3">Complete Your Look</h3>
+              <div class="grid grid-cols-2 gap-3">
+                ${product.aiSuggestions.map(item => `
+                  <div class="suggestion-item border border-gray-200 rounded-lg p-3 cursor-pointer hover:shadow-sm" 
+                    onclick="window.location.href='#'">
+                    <div class="flex items-center">
+                      <div class="w-12 h-12 bg-gray-100 rounded overflow-hidden mr-3">
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+                      </div>
+                      <div>
+                        <p class="text-sm font-medium">${item.title}</p>
+                        <p class="text-xs text-gray-500">${item.reason}</p>
+                      </div>
+                    </div>
+                  </div>
+                `).join("")}
+              </div>
+            </div>
+          ` : ''}
+        </div>
+      </div>
+    </div>
+  `;
+  
+  // Insert content and add close handler
+  modalClone.querySelector(".relative").insertAdjacentHTML("afterbegin", modalContent);
+  modalClone.querySelector("button").addEventListener("click", () => {
+    document.body.removeChild(modalClone);
+  });
+  
+  document.body.appendChild(modalClone);
+}
+
+// Change modal image
+function changeModalImage(src) {
+  const modalMainImage = document.getElementById("modalMainImage");
+  if (modalMainImage) modalMainImage.src = src;
+}
+
+// Change product card image
+function changeProductImage(element, productId, imageSrc) {
+  // Find the product card and update its image
+  const cards = document.querySelectorAll(".product-card");
+  cards.forEach(card => {
+    if (card.querySelector(`button[onclick*="${productId}"]`)) {
+      card.querySelector("img").src = imageSrc;
+    }
+  });
+  
+  // Highlight selected color swatch
+  element.parentElement.querySelectorAll(".color-swatch").forEach(swatch => {
+    swatch.style.border = "1px solid #e5e7eb";
+  });
+  element.style.border = "2px solid #3B82F6";
+}
+
+// Cart functions (simplified for demo)
+function addToCart(productId) {
+  const product = filteredProducts.find(p => p.id === productId);
+  if (!product) return;
+  
+  // In a real app, you would add to cart here
+  alert(`Added ${product.name} to your cart!`);
+}
+
+function quickAddToCart(productId) {
+  // In a real app, you would add to cart without confirmation
+  alert(`Quick added to cart!`);
+}
+
+// Sort products
+document.getElementById("sortBy").addEventListener("change", function() {
+  const sortValue = this.value;
+  
+  switch(sortValue) {
+    case "price-low":
+      filteredProducts.sort((a, b) => a.price - b.price);
+      break;
+    case "price-high":
+      filteredProducts.sort((a, b) => b.price - a.price);
+      break;
+    case "popular":
+      filteredProducts.sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount);
+      break;
+    default: // relevance
+      filteredProducts.sort((a, b) => b.score - a.score);
+  }
+  
+  renderProducts();
+});
+
+// Refresh recommendations
+document.getElementById("refreshBtn").addEventListener("click", function() {
+  // In a real app, you might fetch new recommendations or shuffle
+  filteredProducts = [...filteredProducts].sort(() => 0.5 - Math.random());
+  renderProducts();
+});
+
+// Retake quiz buttons
+document.getElementById("retakeQuizBtn").addEventListener("click", function() {
+  window.location.href = "index.html#quiz";
+});
+document.getElementById("retakeEmptyBtn").addEventListener("click", function() {
+  window.location.href = "index.html#quiz";
+});
+
+// Initialize page
+document.addEventListener("DOMContentLoaded", function() {
+  loadQuizResults();
+  
+  // Add loading skeleton placeholders
+  const skeleton = document.getElementById("loadingSkeleton");
+  for (let i = 0; i < 8; i++) {
+    const placeholder = document.createElement("div");
+    placeholder.className = "bg-white rounded-xl shadow-md overflow-hidden";
+    placeholder.innerHTML = `
+      <div class="aspect-square bg-gray-200 animate-pulse"></div>
+      <div class="p-4">
+        <div class="h-4 bg-gray-200 rounded w-3/4 mb-2 animate-pulse"></div>
+        <div class="h-3 bg-gray-200 rounded w-1/2 mb-3 animate-pulse"></div>
+        <div class="h-4 bg-gray-200 rounded w-1/4 mb-4 animate-pulse"></div>
+        <div class="h-10 bg-gray-200 rounded animate-pulse"></div>
+      </div>
+    `;
+    skeleton.appendChild(placeholder);
+  }
+});
+</script>
+</body>
+</html>
