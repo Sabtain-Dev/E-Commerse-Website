@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="about-us.css">
+    <link rel="icon" href="icons/icon.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <!-- Font Awesome for Stars -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar Section -->
+
+    <header id="navbar">
+        <div class="logo">
+            <a href="Home.html">
+                <img src="icons/logo.png" alt="Your Logo" width="50">
+                <span class="logo-text">AI-Driven Fashion</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="#">How It Works</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li class="active"><a href="about-us.html">About Us</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Navbar Section -->
+<main>
+
+ <!-- ============================== -->
+<!--  About Us Section (Image + Text) -->
+<!-- ============================== -->
+<section class="mt-24 py-20 px-6 max-w-6xl mx-auto bg-white bg-opacity-80 backdrop-blur-sm rounded-xl shadow-xl overflow-hidden">
+  <div class="grid md:grid-cols-2 items-center gap-10">
+    
+    <!--  Left Side Image -->
+    <div class="relative group">
+      <img
+        src="images/7.jpg"
+        alt="Team Working"
+        class="rounded-3xl shadow-lg transform transition duration-700 ease-in-out group-hover:scale-105"
+      />
+      <!-- Optional decorative border or glow effect -->
+      <div class="absolute -inset-1 rounded-3xl border-4 border-blue-500 opacity-10 group-hover:opacity-30 transition-all duration-700"></div>
+    </div>
+
+    <!--  Right Side Text -->
+    <div class="text-center md:text-left">
+      <h2 class="text-5xl font-extrabold text-gray-800 mb-6 text-center">Who We Are ?</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        At <strong>AI-Driven Fashion</strong>, we’re more than just a fashion brand — we’re a movement to revolutionize how people express themselves.
+        Using the power of artificial intelligence, we provide style recommendations, personalized looks, and smart shopping experiences tailored just for you.
+      </p>
+    </div>
+
+  </div>
+</section>
+<!--  End of Hero Section -->
+
+<!-- =========================== -->
+<!--  Our Mission & Vision -->
+<!-- =========================== -->
+<section class="bg-blue-50 bg-opacity-85 py-20 px-6 mt-10">
+  <div class="max-w-6xl mx-auto text-center mb-12">
+    <h2 class="text-4xl font-bold text-blue-800">Our Mission & Vision</h2>
+    <p class="text-gray-600 mt-3 text-lg max-w-3xl mx-auto">
+      Discover what drives us and where we’re headed — our purpose is rooted in innovation and inclusivity.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+    <!--  Mission Card -->
+    <div class="bg-white p-8 rounded-xl border-l-8 border-blue-500 shadow-md hover:shadow-xl transition-all duration-300">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="bg-blue-100 p-3 rounded-full">
+          <i class="fas fa-bullseye text-blue-600 text-2xl"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800">Our Mission</h3>
+      </div>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        To empower people worldwide to express themselves confidently through personalized AI-powered fashion — smart, sustainable, and inclusive.
+      </p>
+    </div>
+
+    <!--  Vision Card -->
+    <div class="bg-white p-8 rounded-xl border-l-8 border-indigo-500 shadow-md hover:shadow-xl transition-all duration-300">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="bg-indigo-100 p-3 rounded-full">
+          <i class="fas fa-eye text-indigo-600 text-2xl"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800">Our Vision</h3>
+      </div>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        To redefine the future of fashion — intelligent, effortless, and emotionally connected. A world where your clothes understand you.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- End of Mission & Vision -->
+
+<!-- ===================== -->
+<!-- 👥 Meet the Team Section -->
+<!-- ===================== -->
+<section class="bg-white bg-opacity-90 py-20 px-6 mt-12">
+  <div class="max-w-6xl mx-auto text-center mb-12">
+    <h2 class="text-4xl font-extrabold text-gray-800 mb-4">Meet the Team</h2>
+    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+      The minds behind AI-Driven Fashion — where creativity meets cutting-edge technology.
+    </p>
+  </div>
+
+  <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+    
+    <!-- 👤 Team Member 1 -->
+    <div class="bg-gray-50 rounded-xl shadow-md p-6 transition-transform transform hover:-translate-y-2 hover:shadow-xl">
+      <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Team Member" class="w-32 h-32 mx-auto rounded-full shadow mb-4 object-cover">
+      <h3 class="text-xl font-semibold text-gray-800">Zara Iqbal</h3>
+      <p class="text-blue-600 mb-4">Chief Fashion Officer</p>
+      <div class="flex justify-center space-x-4 text-gray-500 text-lg">
+        <a href="#"><i class="fab fa-linkedin-in hover:text-blue-700"></i></a>
+        <a href="#"><i class="fab fa-twitter hover:text-blue-500"></i></a>
+        <a href="#"><i class="fab fa-instagram hover:text-pink-500"></i></a>
+      </div>
+    </div>
+
+    <!-- 👤 Team Member 2 -->
+    <div class="bg-gray-50 rounded-xl shadow-md p-6 transition-transform transform hover:-translate-y-2 hover:shadow-xl">
+      <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Team Member" class="w-32 h-32 mx-auto rounded-full shadow mb-4 object-cover">
+      <h3 class="text-xl font-semibold text-gray-800">Hamza Tariq</h3>
+      <p class="text-blue-600 mb-4">Lead AI Engineer</p>
+      <div class="flex justify-center space-x-4 text-gray-500 text-lg">
+        <a href="#"><i class="fab fa-linkedin-in hover:text-blue-700"></i></a>
+        <a href="#"><i class="fab fa-twitter hover:text-blue-500"></i></a>
+        <a href="#"><i class="fab fa-github hover:text-gray-800"></i></a>
+      </div>
+    </div>
+
+    <!-- 👤 Team Member 3 -->
+    <div class="bg-gray-50 rounded-xl shadow-md p-6 transition-transform transform hover:-translate-y-2 hover:shadow-xl">
+      <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Team Member" class="w-32 h-32 mx-auto rounded-full shadow mb-4 object-cover">
+      <h3 class="text-xl font-semibold text-gray-800">Maria Suleman</h3>
+      <p class="text-blue-600 mb-4">UI/UX Designer</p>
+      <div class="flex justify-center space-x-4 text-gray-500 text-lg">
+        <a href="#"><i class="fab fa-behance hover:text-blue-600"></i></a>
+        <a href="#"><i class="fab fa-dribbble hover:text-pink-500"></i></a>
+        <a href="#"><i class="fab fa-instagram hover:text-pink-400"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Button -->
+  <div class="w-full mt-12 px-6">
+  <button id="openJoinModal" class="w-full bg-blue-600 text-white font-semibold text-lg px-6 py-3 rounded-full shadow hover:bg-blue-700 transition duration-300 flex items-center justify-center gap-2">
+    <i class="fas fa-user-plus animate-bounce"></i>
+    Join Our Team
+  </button>
+</div>
+
+
+</section>
+<!--  End of Meet the Team -->
+
+<!-- ===================== -->
+<!--  Our Story Section -->
+<!-- ===================== -->
+<section class="bg-gray-50 bg-opacity-90 py-20 px-6 mt-12">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">Our Story</h2>
+      <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+        From idea to impact — the journey of AI-Driven Fashion, reshaping how the world dresses smart.
+      </p>
+    </div>
+
+    <!-- Timeline Items -->
+    <div class="space-y-16">
+      <!-- Item 1 -->
+      <div class="md:flex items-center gap-10">
+        <div class="md:w-1/2">
+          <img src="images/9.jpg"
+               alt="Our Start"
+               class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="md:w-1/2 mt-6 md:mt-0">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">2024 — Where It All Began</h3>
+          <p class="text-gray-600 text-lg">
+            What started as a small experiment in merging AI with fashion quickly turned into a global platform helping users discover their best style.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="md:flex items-center gap-10 flex-row-reverse">
+        <div class="md:w-1/2">
+          <img src="images/8.jpg"
+               alt="Growth"
+               class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="md:w-1/2 mt-6 md:mt-0 text-left md:text-right">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">2025 — A Growing Community</h3>
+          <p class="text-gray-600 text-lg">
+            With thousands of daily users, our platform evolved into a dynamic ecosystem where AI meets personal expression, and creativity has no bounds.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="md:flex items-center gap-10">
+        <div class="md:w-1/2">
+          <img src="images/10.jpg"
+               alt="The Future"
+               class="rounded-2xl shadow-md hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="md:w-1/2 mt-6 md:mt-0">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">The Future — Powered by You</h3>
+          <p class="text-gray-600 text-lg">
+            Our mission continues with you. AI-Driven Fashion is paving the way toward an intuitive, inclusive, and intelligent fashion experience for all.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of Our Story -->
+
+<!-- ======================== -->
+<!--  Core Values Section -->
+<!-- ======================== -->
+          <section class="py-16 px-6 bg-white bg-opacity-70 backdrop-blur-md rounded-xl shadow-md max-w-6xl mx-auto my-10">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl font-bold text-gray-800">Our Core Values</h2>
+              <p class="text-gray-600 mt-2">What drives AI-Driven Fashion forward</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <!-- Innovation -->
+              <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-md">
+                <i class="fas fa-lightbulb text-yellow-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Innovation</h3>
+                <p class="text-gray-600 mt-2">We integrate the latest AI technologies to reshape the fashion experience.</p>
+              </div>
+
+              <!-- Sustainability -->
+              <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-md">
+                <i class="fas fa-leaf text-green-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Sustainability</h3>
+                <p class="text-gray-600 mt-2">Our platform encourages mindful consumption through smart recommendations.</p>
+              </div>
+
+              <!-- Diversity -->
+              <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-md">
+                <i class="fas fa-users text-blue-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Diversity</h3>
+                <p class="text-gray-600 mt-2">We celebrate every individual’s unique style and identity.</p>
+              </div>
+            </div>
+          </section>
+<!--  End of Core Values -->
+
+<!-- ============================ -->
+<!--  Why Choose Us Section -->
+<!-- ============================ -->
+        <section class="py-16 px-6 bg-gray-100 bg-opacity-70 rounded-xl shadow-md max-w-6xl mx-auto my-10">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800">Why Choose Us?</h2>
+            <p class="text-gray-600 mt-2">Discover what makes us different from the rest</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-md text-center">
+              <i class="fas fa-robot text-indigo-500 text-4xl mb-4"></i>
+              <h3 class="text-xl font-semibold text-gray-800">AI-Powered Styling</h3>
+              <p class="text-gray-600 mt-2">Our smart system suggests outfits based on your taste, weather, and trends.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-md text-center">
+              <i class="fas fa-truck-fast text-green-500 text-4xl mb-4"></i>
+              <h3 class="text-xl font-semibold text-gray-800">Fast Delivery</h3>
+              <p class="text-gray-600 mt-2">We ensure your style is delivered at speed, without compromising quality.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-md text-center">
+              <i class="fas fa-user-shield text-red-500 text-4xl mb-4"></i>
+              <h3 class="text-xl font-semibold text-gray-800">Privacy First</h3>
+              <p class="text-gray-600 mt-2">Your preferences stay private — we never sell or share your data.</p>
+            </div>
+          </div>
+        </section>
+<!--  End of Why Choose Us -->
+
+<!-- ============================== -->
+<!-- 🗣️ Enhanced Client Testimonials Section -->
+<!-- ============================== -->
+<section 
+  x-data="{
+    testimonials: [
+      {
+        name: 'Zara Iqbal',
+        role: 'Fashion Enthusiast',
+        image: 'https://randomuser.me/api/portraits/women/21.jpg',
+        text: 'This platform completely changed how I shop. The AI suggestions are always on point!',
+        rating: 5
+      },
+      {
+        name: 'Hamza Tariq',
+        role: 'Stylist & Blogger',
+        image: 'https://randomuser.me/api/portraits/men/15.jpg',
+        text: 'I love how personalized everything feels. It\'s like having my own stylist!',
+        rating: 4
+      },
+      {
+        name: 'Maria Suleman',
+        role: 'Model',
+        image: 'https://randomuser.me/api/portraits/women/22.jpg',
+        text: 'Easy to use, stylish results, and I always get compliments on my outfits.',
+        rating: 5
+      },
+      {
+        name: 'Ali Raza',
+        role: 'Tech Meets Fashion Fan',
+        image: 'https://randomuser.me/api/portraits/men/50.jpg',
+        text: 'AI-Driven Fashion brings together the best of tech and trend!',
+        rating: 4
+      },
+      {
+        name: 'Hina Javed',
+        role: 'Online Shopper',
+        image: 'https://randomuser.me/api/portraits/women/15.jpg',
+        text: 'I never knew online shopping could be this smart and satisfying!',
+        rating: 5
+      }
+    ],
+    startIndex: 0,
+    interval: null,
+    paused: false,
+    next() {
+      this.startIndex = (this.startIndex + 1) % this.testimonials.length;
+    },
+    prev() {
+      this.startIndex = (this.startIndex - 1 + this.testimonials.length) % this.testimonials.length;
+    },
+    currentVisible() {
+      return [
+        this.testimonials[this.startIndex],
+        this.testimonials[(this.startIndex + 1) % this.testimonials.length]
+      ];
+    },
+    startAutoScroll() {
+      this.interval = setInterval(() => {
+        if (!this.paused) this.next();
+      }, 1500);
+    },
+    stopAutoScroll() {
+      clearInterval(this.interval);
+    },
+    init() {
+      this.startAutoScroll();
+    }
+  }"
+  x-init="init"
+  @mouseenter="paused = true"
+  @mouseleave="paused = false"
+  class="py-20 px-6 bg-white bg-opacity-80 backdrop-blur-lg rounded-3xl shadow-2xl max-w-6xl mx-auto my-16"
+>
+  <div class="text-center mb-14">
+    <h2 class="text-4xl font-extrabold text-gray-800">What Our Users Say</h2>
+    <p class="text-gray-600 mt-2 text-lg">Real experiences from real fashion lovers</p>
+  </div>
+
+  <div class="relative">
+    <!-- Testimonials Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 px-2 transition-opacity duration-700 ease-in-out">
+      <template x-for="testimonial in currentVisible()" :key="testimonial.name">
+        <div class="bg-white bg-opacity-95 p-6 rounded-2xl shadow-md text-center transform transition hover:-translate-y-1 hover:shadow-xl opacity-100 animate-fade">
+          <img :src="testimonial.image" alt="Profile" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-blue-300 shadow-sm">
+          <p class="text-gray-700 italic mb-4" x-text="testimonial.text"></p>
+          <!-- ⭐ Star Rating -->
+          <div class="flex justify-center mb-2 text-yellow-400 text-xl">
+            <template x-for="i in 5">
+              <span :class="i <= testimonial.rating ? 'fas fa-star' : 'far fa-star'"></span>
+            </template>
+          </div>
+          <h4 class="text-lg font-semibold text-gray-800" x-text="'— ' + testimonial.name"></h4>
+          <p class="text-sm text-gray-500" x-text="testimonial.role"></p>
+        </div>
+      </template>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="flex justify-center mt-12 gap-6">
+      <button @click="prev" aria-label="Previous Testimonial"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-full text-xl shadow-md transition duration-300">
+        &larr;
+      </button>
+      <button @click="next" aria-label="Next Testimonial"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-full text-xl shadow-md transition duration-300">
+        &rarr;
+      </button>
+    </div>
+  </div>
+</section>
+<!--  End of Enhanced Testimonials -->
+
+<!-- ======================== -->
+<!-- Call to Action (CTA) -->
+<!-- ======================== -->
+<section class="py-16 px-6 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl shadow-xl max-w-6xl mx-auto my-10 text-center">
+  <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Experience Smart Fashion?</h2>
+  <p class="mb-6 text-lg max-w-2xl mx-auto">Join thousands who are transforming their style using AI. Get started now and express yourself with confidence.</p>
+  <a href="Shop.html" class="inline-block bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition duration-300">
+    Shop Now
+  </a>
+</section>
+<!-- End of CTA -->
+
+</main>
+    <!-- Footer Section -->
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="icons/logo.png" alt="Company Logo"> <!-- Replace with your logo -->
+                <p>&copy; <span id="year"></span> <strong>AI-Driven Fashion.</strong> All rights reserved.</p>
+                <script>
+                  document.getElementById("year").textContent = new Date().getFullYear();
+                </script>
+            </div>
+            <div class="footer-right">
+                <div class="social-icons">
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Section -->
+
+<!--  Join Our Team Modal -->
+<div id="joinTeamModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 backdrop-blur-sm hidden flex items-start justify-center pt-12 px-4 overflow-y-auto">
+  <div class="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-2xl relative max-h-[90vh] overflow-y-auto">
+
+    <!--  Close Button -->
+    <button id="closeJoinModal" class="absolute top-4 right-4 text-gray-600 hover:text-red-600 text-2xl leading-none z-10">
+      &times;
+    </button>
+
+    <!--  Modal Title -->
+    <h2 class="text-2xl font-bold mb-6 text-gray-800 text-center">Join Our Team</h2>
+
+    <!-- Form -->
+    <form class="space-y-4">
+      <!-- Full Name -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Full Name</label>
+        <input type="text" required class="w-full mt-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" required class="w-full mt-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Role Selector -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Position Applying For</label>
+        <select id="positionSelect" required class="w-full mt-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="">-- Select Role --</option>
+          <option value="fashion">Fashion Officer</option>
+          <option value="engineer">AI Engineer</option>
+          <option value="designer">UI/UX Designer</option>
+          <option value="marketing">Marketing Lead</option>
+        </select>
+      </div>
+
+      <!-- Salary Display -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Expected Salary (PKR)</label>
+        <input id="salaryOutput" readonly placeholder="Select a role" class="w-full mt-1 p-3 bg-gray-100 border border-gray-300 rounded-md text-gray-600">
+      </div>
+
+      <!-- Resume Upload -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Resume (PDF Only)</label>
+        <input type="file" accept=".pdf" required class="w-full mt-1 p-3 border border-gray-300 rounded-md bg-white">
+      </div>
+
+      <!-- Cover Letter -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Message / Cover Letter</label>
+        <textarea rows="4" required class="w-full mt-1 p-3 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center mt-6">
+        <button type="submit" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-700 transition-all duration-300">
+          Submit Application
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="about-us.js"></script>
+
+</body>
