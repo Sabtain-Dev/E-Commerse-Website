@@ -1,0 +1,497 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background-image: url('images/5.jpg');
+    background-size: cover; /* This makes the background image cover the entire screen */
+    background-attachment: fixed; /* This makes the background image stay in place while scrolling */
+    background-repeat: no-repeat; /* This prevents the background image from repeating */
+    background-position: center; /* This centers the background image */
+}
+
+/* Navbar CSS */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    color: #080808;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.9s ease;
+    border-radius: 0 0 10px 10px;
+    height: 55px;
+}
+
+header.scrolled {
+    background-color: #bdbdbd00;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 238, 0.37);
+    border: 0px solid rgba(255, 255, 255, 0.18);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 55px;
+    cursor: pointer;
+    padding-left: 12px;
+}
+
+header .logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+header .logo .logo-text {
+    margin-left: 10px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-right: 12px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li a i {
+    font-size: 1.2em;
+}
+
+header.navbar-scrolled nav ul li a {
+    color: black;
+}
+
+header.navbar-scrolled nav ul li.active a {
+    color: rgba(0, 0, 0, 0.911);
+}
+
+header.navbar-scrolled .logo-text {
+    color: black;
+}
+
+header.navbar-scrolled nav ul li a:hover {
+    color: #007bff;
+}
+
+header nav ul li.active a {
+    border-bottom: 3px solid #ff4081;
+    color: #fff;
+    pointer-events: none;
+    font-weight: 700; 
+}
+
+header nav ul li a:hover {
+    border-top: 3px solid #ff4081;
+    color: #FFD700;
+    font-weight: 600;
+}
+
+/* Navbar CSS */
+
+/* Front Section CSS */
+
+.hero {
+    position: relative;
+    text-align: center;
+    color: #000;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero img.img-fluid {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease;
+    /* border-image: fill 0 linear-gradient(#0001, #000); */
+}
+
+.hero img.hover {
+    opacity: 0;
+}
+
+.hero:hover img.hover {
+    opacity: 1;
+}
+
+.hero:hover img.original {
+    opacity: 0;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.hero .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.cta-buttons .btn {
+    display: inline-block;
+    background-color: #ff4081;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-buttons .btn:hover {
+    background-color: #e60070;
+}
+
+/* Front Section CSS */
+
+/* Further Sections */
+
+
+.main {
+    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+}
+
+/* Newsletter Subscribe Section */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 10;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* padding: 20px; */
+    max-width: 800px;
+    width: 100%;
+    z-index: 20;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal.open {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal-form input[type="email"] {
+    padding-left: 35px; /* Add space for icon */
+    background: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/sprites/solid.svg') no-repeat left center;
+    background-size: 20px;
+}
+
+.modal.closed {
+    display: none;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.modal-image {
+    max-width: 50%;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.modal-text {
+    max-width: 50%;
+    padding: 20px;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+}
+
+.input-container input {
+    padding-left: 30px;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.modal p {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #555;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-form input {
+    padding: 10px;
+    font-size: 14px;
+    font-family: 'Poppins', Arial, sans-serif;
+    width: 83%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #41b641;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 500;
+    color: white;
+    width: 97%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+}
+
+.modal-form button:hover {
+    background-color: #0056b3;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-close-btn ion-icon {
+    color: #333;
+}
+
+/* Newsletter Subscribe Section */
+
+/* Wardrobe Section CSS */
+
+section.wardrobe {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+}
+
+section.wardrobe p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+section.wardrobe .btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+section.wardrobe .btn:hover {
+    background-color: #e0a800;
+}
+
+/* Wardrobe Section CSS */
+
+/* Footer Section CSS */
+
+footer {
+    background-color: #ffffff8f;
+    color: #000000;
+    padding: 13px 0;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid #e5e5e5;
+    border-radius: 8px;
+}
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+footer .footer-content .footer-left,
+footer .footer-content .footer-right {
+    display: flex;
+    align-items: center;
+}
+footer .footer-content .footer-left img {
+    height: 35px;
+    margin-right: 10px;
+}
+footer .footer-content .footer-left p {
+    margin: 0;
+}
+footer .social-icons a {
+    color: #555;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+footer .social-icons a:hover {
+    color: #000;
+}
+
+/* Footer Section CSS */
+
+/* Scrollbar CSS  */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(26, 185, 87);
+    border-radius: 10px;
+}
+
+/* Scrollbar CSS  */
+
+/* Prevent Tailwind from affecting global elements */
+.tailwind-scope * {
+    all: revert-layer;
+    box-sizing: border-box;
+}
+
+.step-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+  position: absolute;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  left: 0; right: 0;
+}
+
+.step-card.active {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+}
+
+.step-icon svg {
+  width: 96px;
+  height: 96px;
+  margin: auto;
+  display: block;
+  animation: popIn 0.8s ease;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  background: #ccc;
+  border-radius: 9999px;
+  transition: background 0.4s;
+}
+
+.dot.active {
+  background: #10b981; /* green */
+}
