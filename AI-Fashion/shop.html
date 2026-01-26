@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <!-- Tailwind for specific section -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS CDN (only used for this section) -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="shop.css">
+    <link rel="icon" href="icons/icon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body> 
+
+      <!-- Navbar Section -->
+
+    <header id="navbar">
+       <div class="logo">
+            <a href="Home.html">
+                <img src="icons/logo.png" alt="Your Logo" width="50">
+                <span class="logo-text">AI-Driven Fashion</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="#">How It Works</a></li>
+                <li class="active"><a href="shop.html">Shop</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <!-- Navbar Section -->
+
+    
+<main>
+
+<section class="relative pt-[50px] pb-[90px] px-4 sm:px-6 overflow-hidden">
+  <!-- Rotated Background Container -->
+  <div class="absolute inset-0 overflow-hidden">
+    <!-- Rotated Image with Fade -->
+    <div class="h-full w-full"
+      style="
+        background-image: 
+          linear-gradient(to right, white 0%, rgba(255,255,255,0.8) 20%, transparent 40%),
+          url('images/11.png');
+        background-position: right top;
+        background-repeat:unset;
+        background-size: contain;
+        transform: rotate(-0deg);
+        transform-origin: center;
+        margin-top: 30px; /* Adjust this to prevent navbar clash */
+      ">
+    </div>
+  </div>
+  
+  <!-- Enhanced gradient overlay - now starts from full width -->
+<div class="absolute inset-0 
+           bg-[linear-gradient(to_right,transparent_5%,#fde047_15%,#f97316_32%,transparent_60%)]
+           mix-blend-hard-light
+           opacity-80"></div>
+  <!-- Content Container -->
+  <div class="relative max-w-4xl mx-auto lg:ml-[60px] text-left pt-[80px] md:pt-[180px] pb-[60px] px-4 sm:px-6 lg:px-0">
+    <h1 class="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight text-gray-900 drop-shadow-lg">
+      Smart Fashion Starts Here
+    </h1>
+
+    <p class="text-base sm:text-lg mb-4 text-gray-800 max-w-xl font-medium drop-shadow-md">
+      Unleash your unique style with AI-powered suggestions tailored to your mood, weather, and trends.
+    </p>
+
+    <p class="text-sm sm:text-md mb-8 text-gray-700 max-w-xl drop-shadow-sm">
+      From smart recommendations to dynamic styling — fashion meets intelligence.
+    </p>
+
+    <button
+  id="refreshRecommendations"
+  class="relative overflow-hidden 
+         bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 
+         hover:from-purple-600 hover:via-pink-600 hover:to-rose-600
+         transition-all duration-500 
+         text-white font-semibold text-lg 
+         px-8 py-3 rounded-full 
+         shadow-lg 
+         flex items-center 
+         animate-[slide_6s_linear_infinite] 
+         group
+         ml-0 hover:ml-4"
+  style="width: fit-content;">
+  
+  <!-- Animated sparkles -->
+  <i class="fas fa-wand-magic-sparkles text-white text-xl group-hover:animate-spin"></i>
+  
+  <!-- Button text with separate animation -->
+  <span class="ml-3 inline-block group-hover:translate-x-1 transition-transform duration-300">
+    Refresh AI Picks
+  </span>
+  
+  <!-- Optional: Glow effect on hover -->
+  <span class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 
+              bg-[radial-gradient(circle_at_center,_transparent_70%)] 
+              transition-opacity duration-700">
+  </span>
+</button>
+</section>
+
+<!-- ==================== -->
+<!-- Full-Height Continuous Carousel -->
+<!-- ==================== -->
+<section class="py-8 backdrop-blur-md bg-black/30 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Carousel Container - Full viewport width -->
+    <div class="relative h-80 w-full overflow-hidden">
+      <!-- Animated Track -->
+      <div class="absolute top-0 left-0 h-full flex items-center animate-[scroll_25s_linear_infinite] whitespace-nowrap">
+        <!-- Banner Set 1 -->
+        <div class="inline-block h-full w-[50vw] min-w-[554px] mx-2">
+          <img src="images/men-banner.jpg" alt="Men's Fashion" class="h-full w-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="inline-block h-full w-[50vw] min-w-[554px] mx-2">
+          <img src="images/women-banner.jpg" alt="Women's Fashion" class="h-full w-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="inline-block h-full w-[50vw] min-w-[554px] mx-2 relative">
+          <img src="images/electronics-banner-1.jpg" alt="Headphones" class="h-full w-full object-cover rounded-lg shadow-md brightness-75">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="bg-black/80 text-white text-lg md:text-xl font-bold px-4 py-1 rounded-md animate-pulse">COMING SOON</span>
+          </div>
+        </div>
+        <div class="inline-block h-full w-[50vw] min-w-[554px] mx-2 relative">
+          <img src="images/electronics-banner-2.jpg" alt="Mouse" class="h-full w-full object-cover rounded-lg shadow-md brightness-75">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="bg-black/80 text-white text-lg md:text-xl font-bold px-4 py-1 rounded-md animate-pulse">COMING SOON</span>
+          </div>
+        </div>
+        
+        <!-- Banner Set 2 (Duplicates for seamless loop) -->
+        <div class="inline-block h-full w-[50vw] min-w-[554px] mx-2 bg-transparent">
+          <img src="images/men-banner.jpg" alt="Men's Fashion" class="h-full w-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="inline-block h-full w-[50vw] min-w-[554px] mx-2 bg-transparent">
+          <img src="images/women-banner.jpg" alt="Women's Fashion" class="h-full w-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="inline-block h-full w-[50vw] min-w-[554px] mx-2 bg-transparent">
+          <img src="images/electronics-banner-1.jpg" alt="Headphones" class="h-full w-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="inline-block h-full w-[50vw] min-w-[554px] mx-2 bg-transparent">
+          <img src="images/electronics-banner-2.jpg" alt="Mouse" class="h-full w-full object-cover rounded-lg shadow-md">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        keyframes: {
+          scroll: {
+            '0%': { transform: 'translateX(0)' },
+            '100%': { transform: 'translateX(-50%)' }
+          }
+        },
+        animation: {
+          scroll: 'scroll 25s linear infinite',
+        }
+      }
+    }
+  }
+</script>
+
+<!-- -------------------------------------------------------------------------- -->
+<!-- Explore your Ai picks Section -->
+<!-- Product Section Wrapper -->
+<section class="py-16 px-6 bg-gradient-to-r from-blue-300 via-green-300 to-pink-200 text-gray-900 max-h-[830px] overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Section Headings -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-extrabold mb-4">Explore AI-Picked Products</h2>
+      <p class="text-lg text-gray-600">Discover fashion tailored by intelligent algorithms.</p>
+    </div>
+
+    <!-- Filter Tabs Section -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10" id="filterTabs">
+      <button class="tab-button px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-semibold hover:bg-blue-200 transition">All</button>
+      <button class="tab-button px-4 py-2 bg-pink-100 text-pink-700 rounded-full font-semibold hover:bg-pink-200 transition">Women</button>
+      <button class="tab-button px-4 py-2 bg-green-100 text-green-700 rounded-full font-semibold hover:bg-green-200 transition">Men</button>
+      <button class="tab-button px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full font-semibold hover:bg-yellow-200 transition">Winter</button>
+      <button class="tab-button px-4 py-2 bg-red-100 text-red-700 rounded-full font-semibold hover:bg-red-200 transition">Summer</button>
+    </div>
+
+    <!-- Product Cards Carousel Wrapper -->
+    <div class="relative">
+      <!-- Left Scroll Button -->
+      <button id="scrollLeft" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-700 rounded-full p-2 shadow-md z-10 hidden">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <!-- Product Grid Scrollable Container -->
+      <div class="relative">
+        <div id="productGrid" class="flex space-x-6 overflow-x-auto scroll-smooth pb-16 no-scrollbar">
+
+          <!-- Product Card 1 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Sale</div>
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/1.0.jpg" alt="Stylish Jacket" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Stylish Jacket</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <p class="text-gray-500 line-through text-sm">$99.99</p>
+              <p class="text-blue-600 font-semibold">$41.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Stylish Jacket')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Stylish Jacket')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Blue Jeans</li>
+                  <li>Try with Joggers</li>
+                  <li>Weather Fit: Winter</li>
+                  <li>Occasion: Casual</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-pink-500 via-yellow-700 to-red-800">
+            <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+              <img src="images/2.0.jpg" alt="Summer Dress" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Summer Dress</h3>
+              <p class="text-sm text-gray-500">For Women</p>
+              <div class="pb-3"></div>
+              <p class="text-blue-600 font-semibold mt-2">$15.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Summer Dress')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Summer Dress')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with White Sandals</li>
+                  <li>Try with Sun Hat</li>
+                  <li>Weather Fit: Summer</li>
+                  <li>Occasion: Outdoor</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-pink-500 via-yellow-700 to-red-800">
+            <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+              <img src="images/3.0.jpg" alt="Black Jeans" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Black Jeans</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <div class="pb-3"></div>
+              <p class="text-blue-600 font-semibold mt-2">$24.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Black Jeans')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Black Jeans')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with White T-shirt</li>
+                  <li>Try with a Stylish Jacket</li>
+                  <li>Weather Fit: All Seasons</li>
+                  <li>Occasion: Casual</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 4 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-pink-500 via-yellow-700 to-red-800">
+            <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+              <img src="images/4.0.jpg" alt="Sports Shoes" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Sports Shoes</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <div class="pb-3"></div>
+              <p class="text-blue-600 font-semibold mt-2">$52.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Sports Shoes')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Sports Shoes')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                <li>Pair with Joggers</li>
+                <li>Style with T-Shirts/ Hoodies</li>
+                <li>Weather Fit: All Weather</li>
+                <li>Occasion: Sports, Workout</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 5 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Sale</div>
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/5.0.jpg" alt="Black Flared Skirt" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Black Flared Skirt</h3>
+              <p class="text-sm text-gray-500">For Women</p>
+              <p class="text-gray-500 line-through text-sm">$46.99</p>
+              <p class="text-blue-600 font-semibold">$22.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Black Flared Skirt')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Black Flared Skirt')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Crop Top</li>
+                  <li>Style with Blazer, High Heels</li>
+                  <li>Weather Fit: Spring & Fall</li>
+                  <li>Occasion: Brunch, Casual</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 6 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-pink-500 via-yellow-700 to-red-800">
+            <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+              <img src="images/6.0.jpg" alt="Blazer" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Blazer</h3>
+              <p class="text-sm text-gray-500">For Women</p>
+              <div class="pb-3"></div>
+              <p class="text-blue-600 font-semibold mt-2">$62.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Blazer')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Blazer')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Black Flared Skirt</li>
+                  <li>Style with Heels</li>
+                  <li>Weather Fit: All Seasons</li>
+                  <li>Occasion: Formal Events</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Scroll Button -->
+        <button id="scrollRight" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-700 rounded-full p-2 shadow-md z-10">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal Template -->
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-start justify-center z-50 pt-[58px] px-4 sm:px-6 hidden">
+      <div class="bg-white rounded-xl max-w-3xl w-full overflow-hidden shadow-xl relative max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-center p-4 border-b">
+          <h3 class="text-lg font-semibold text-gray-800" id="modalTitle">Product Title</h3>
+          <button onclick="closeModal()" class="text-gray-500 hover:text-gray-800 text-xl">&times;</button>
+        </div>
+
+        <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-6 pb-6">
+          <!-- Left Side -->
+          <div>
+            <div class="relative">
+              <img id="modalImage" src="" alt="Product" class="w-full h-64 object-contain mb-4 cursor-zoom-in transition-transform duration-300 hover:scale-110">
+            </div>
+            <p class="text-blue-600 font-bold text-lg" id="modalPrice">$0.00</p>
+            <p class="text-sm text-gray-600" id="calculatedPrice">Total: $0.00</p>
+            <p class="text-green-700 text-sm mt-1" id="stockCount">In Stock: 12</p>
+
+            <label class="block mt-4">
+              Quantity:
+              <input type="number" min="1" value="1" id="quantityInput" class="mt-1 block w-24 border rounded px-2 py-1" oninput="updateTotalPrice()" />
+            </label>
+
+            <label class="block mt-4">
+              Variant:
+              <select id="colorSelector" onchange="changeProductColor()" class="mt-1 block w-full border rounded px-2 py-1">
+              </select>
+            </label>
+
+            <label class="block mt-4">
+              Coupon Code:
+              <input type="text" placeholder="Enter code" class="mt-1 block w-full border rounded px-2 py-1" />
+            </label>
+
+            <button onclick="handleAddToCart()" class="mt-4 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex items-center justify-center gap-2">
+              <i class="fas fa-shopping-cart"></i>
+              Add to Cart
+            </button>
+          </div>
+
+          <!-- Right Side -->
+          <div>
+            <h4 class="text-md font-semibold text-gray-800 mb-2">Details</h4>
+            <ul id="modalDetails" class="list-disc list-inside text-sm text-gray-700">
+              <!-- Dynamic -->
+            </ul>
+
+            <div class="mt-4">
+              <p class="text-sm font-semibold mb-2">AI Recommended:</p>
+              <div class="grid grid-cols-2 gap-4" id="aiSuggestions">
+                <!-- Dynamic -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Explore your Ai picks Section -->
+
+
+<!-- Animated Transition Section -->
+<section class="transition-section bg-gradient-to-r from-purple-500 to-pink-500 py-16 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="animation-container mb-8">
+      <div class="animated-text text-4xl font-bold text-white mb-6">
+        <span class="text-block">Discover Your</span>
+        <span class="text-block">Unique Style!</span>
+      </div>
+      <div class="animated-icon text-6xl mb-6">👗</div>
+    </div>
+    
+    <button id="quiz-redirect" class="redirect-btn relative overflow-hidden px-8 py-4 bg-white text-purple-600 font-bold rounded-full text-lg transform hover:scale-105 transition-all duration-300">
+      <span class="relative z-10">Take Our Style Quiz</span>
+      <span class="absolute inset-0 bg-white opacity-20 animate-pulse rounded-full"></span>
+    </button>
+    
+    <p class="mt-4 text-white opacity-80">Get personalized recommendations in just 2 minutes</p>
+  </div>
+</section>
+
+<script>
+// Animate elements sequentially
+document.addEventListener('DOMContentLoaded', function() {
+  const textBlocks = document.querySelectorAll('.text-block');
+  const icon = document.querySelector('.animated-icon');
+  
+  // Animate text blocks one by one
+  textBlocks.forEach((block, index) => {
+    setTimeout(() => {
+      block.style.opacity = 1;
+      block.style.transform = 'translateY(0)';
+    }, 300 * index);
+  });
+  
+  // Animate icon after text
+  setTimeout(() => {
+    icon.style.opacity = 1;
+    icon.style.transform = 'scale(1) rotate(0deg)';
+  }, 900);
+  
+  // Redirect button
+  document.getElementById('quiz-redirect').addEventListener('click', function() {
+    // Add transition class to body
+    document.body.classList.add('page-transition');
+    
+    // Redirect after animation
+    setTimeout(() => {
+      window.location.href = 'index.html?from=shop';
+    }, 500);
+  });
+});
+</script>
+
+<style>
+/* Animation Styles */
+.transition-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.animation-container {
+  perspective: 1000px;
+}
+
+.text-block {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animated-icon {
+  opacity: 0;
+  transform: scale(0.8) rotate(-15deg);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-block;
+}
+
+/* Button Animation */
+.redirect-btn {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Page Transition */
+.page-transition {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+/* Initial States */
+.text-block, .animated-icon {
+  opacity: 0;
+}
+</style>
+
+
+<!-- Featured Products Section -->
+
+<section class="py-16 px-6 bg-gradient-to-r from-blue-300 via-green-300 to-pink-200 text-gray-900 max-h-[1290px] overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Section Headings -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-extrabold mb-4">Featured Products</h2>
+      <p class="text-lg text-gray-600">Handpicked styles our AI recommends just for you.</p>
+    </div>
+
+    <!-- Grid Layout for Featured Product Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+
+          <!-- Featured Product Card 1 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/f1.jpg" alt="Floral Shirt" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Floral Shirt</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$20.00</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Floral Shirt')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Floral Shirt')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Floral Shorts</li>
+                  <li>Try with Sandles</li>
+                  <li>Weather Fit: Summer</li>
+                  <li>Occasion: Vacations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Product Card 2 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Sale</div>
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/f2.jpg" alt="Cotten Shirt" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Cotten Shirt</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <p class="text-gray-500 line-through text-sm">$29.99</p>
+              <p class="text-blue-600 font-semibold">$14.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Cotten Shirt')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Cotten Shirt')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Oxford Shoes</li>
+                  <li>Try with Branded Watch</li>
+                  <li>Weather Fit: Summer</li>
+                  <li>Occasion: Formal Events</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Product Card 3 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Sale</div>
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/f3.jpg" alt="Long Coat" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Long Coat</h3>
+              <p class="text-sm text-gray-500">For Men/Women</p>
+              <p class="text-gray-500 line-through text-sm">$102.99</p>
+              <p class="text-blue-600 font-semibold">$52.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Long Coat')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Long Coat')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Black Jeans</li>
+                  <li>Try with Shoes/Heels</li>
+                  <li>Weather Fit: Winter</li>
+                  <li>Occasion: Formal, Casual</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Product Card 4 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/f4.jpg" alt="Shirt" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Shirt</h3>
+              <p class="text-sm text-gray-500">For Women</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$9.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Shirtt')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Shirt')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Striped Trousers</li>
+                  <li>Try with Sandles</li>
+                  <li>Weather Fit: Summer</li>
+                  <li>Occasion: Casual</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Product Card 5 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/f5.jpg" alt="Watch" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Watch</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$21.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Watch')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Watch')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Printed Shirt</li>
+                  <li>Try with Hat</li>
+                  <li>Weather Fit: Summer</li>
+                  <li>Occasion: Casual</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Product Card 6 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Sale</div>
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/f6.jpg" alt="Oxford Shoes" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Oxford Shoes</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <p class="text-gray-500 line-through text-sm">$89.99</p>
+              <p class="text-blue-600 font-semibold">$69.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Oxford Shoes')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Oxford Shoes')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Stylish Jacket</li>
+                  <li>Try with Pant</li>
+                  <li>Weather Fit: Any</li>
+                  <li>Occasion: Office</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Product Card 7 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/1.3.jpg" alt="Joggers" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Joggers</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$41.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Joggers')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Joggers')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Hoddie</li>
+                  <li>Try with Jacket</li>
+                  <li>Weather Fit: Winter & Fall</li>
+                  <li>Occasion: Outdoor</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Product Card 8 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/4.2.jpg" alt="Hoddie" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Hoddie</h3>
+              <p class="text-sm text-gray-500">For Men/Women</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$20.00</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Hoddie')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Hoddie')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Watch/Trousers</li>
+                  <li>Try with Sandles/Hat</li>
+                  <li>Weather Fit: Winter, Fall</li>
+                  <li>Occasion: Vacations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Product Card 9 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Sale</div>
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/f9.jpg" alt="Striped Trousers" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Striped Trousers</h3>
+              <p class="text-sm text-gray-500">For Women</p>
+              <p class="text-gray-500 line-through text-sm">$30.00</p>
+              <p class="text-blue-600 font-semibold">$18.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Striped Trousers')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Striped Trousers')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Summer Dress</li>
+                  <li>Try with Sandles</li>
+                  <li>Weather Fit: Spring</li>
+                  <li>Occasion: Casual</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+                    <!-- Featured Product Card 10 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/f1.4.jpg" alt="Sandles" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Sandles</h3>
+              <p class="text-sm text-gray-500">For Men/Women</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$11.00</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Sandles')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Sandles')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Floral Shirt</li>
+                  <li>Try with Striped Trousers</li>
+                  <li>Weather Fit: Summer</li>
+                  <li>Occasion: Vacations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+      <!-- Repeat above Product Card structure for more products (copy/paste and update content) -->
+
+    </div> 
+  </div>
+</section>
+
+<section class="bg-gray-300">  <!-- Outer background (pink line) -->
+  <div class="w-full bg-gradient-to-r from-amber-100 via-sky-200 via-emerald-200 to-pink-200 py-6 sm:py-10 border-4 border-yellow-100 rounded-1xl">
+    <!-- <div class="w-full max-w-7xl mx-auto bg-gradient-to-r from-amber-100 via-sky-200 via-emerald-200 to-pink-200 rounded-2xl shadow-lg p-6 sm:p-10 border border-black/10 hover:shadow-xl transition-shadow duration-300"></div>  Full width colored background -->
+    <div class="w-full px-4 sm:px-6 lg:px-8">  <!-- Full width content container (green line) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 md:gap-10 text-center">
+        
+        <!-- Feature 1 -->
+        <div class="group hover:-translate-y-1 transition-transform duration-300">
+          <div class="relative">
+            <img src="images/features/f1.png" alt="Support" class="w-32 md:w-36 lg:w-40 mx-auto object-contain group-hover:scale-110 transition-transform duration-300 feature-icon">
+            <div class="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-10 rounded-full transition-opacity duration-300"></div>
+          </div>
+          <p class="mt-3 text-sm md:text-base text-gray-700 font-medium group-hover:text-blue-600 transition-colors duration-300">24/7 Support</p>
+          <p class="text-xs text-gray-500">Always here when you need us</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="group hover:-translate-y-1 transition-transform duration-300">
+          <div class="relative">
+            <img src="images/features/f2.png" alt="Fast Delivery" class="w-32 md:w-36 lg:w-40 mx-auto object-contain group-hover:scale-110 transition-transform duration-300 feature-icon">
+            <div class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-10 rounded-full transition-opacity duration-300"></div>
+          </div>
+          <p class="mt-3 text-sm md:text-base text-gray-700 font-medium group-hover:text-green-600 transition-colors duration-300">Fast Delivery</p>
+          <p class="text-xs text-gray-500">Lightning-fast shipping</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="group hover:-translate-y-1 transition-transform duration-300">
+          <div class="relative">
+            <img src="images/features/f3.png" alt="Savings" class="w-32 md:w-36 lg:w-40 mx-auto object-contain group-hover:scale-110 transition-transform duration-300 feature-icon">
+            <div class="absolute inset-0 bg-yellow-500 opacity-0 group-hover:opacity-10 rounded-full transition-opacity duration-300"></div>
+          </div>
+          <p class="mt-3 text-sm md:text-base text-gray-700 font-medium group-hover:text-yellow-600 transition-colors duration-300">Smart Savings</p>
+          <p class="text-xs text-gray-500">More value for your money</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="group hover:-translate-y-1 transition-transform duration-300">
+          <div class="relative">
+            <img src="images/features/f4.png" alt="Quality" class="w-32 md:w-36 lg:w-40 mx-auto object-contain group-hover:scale-110 transition-transform duration-300 feature-icon">
+            <div class="absolute inset-0 bg-purple-500 opacity-0 group-hover:opacity-10 rounded-full transition-opacity duration-300"></div>
+          </div>
+          <p class="mt-3 text-sm md:text-base text-gray-700 font-medium group-hover:text-purple-600 transition-colors duration-300">Top Quality</p>
+          <p class="text-xs text-gray-500">Premium products guaranteed</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="group hover:-translate-y-1 transition-transform duration-300">
+          <div class="relative">
+            <img src="images/features/f5.png" alt="Secure Checkout" class="w-32 md:w-36 lg:w-40 mx-auto object-contain group-hover:scale-110 transition-transform duration-300 feature-icon">
+            <div class="absolute inset-0 bg-red-500 opacity-0 group-hover:opacity-10 rounded-full transition-opacity duration-300"></div>
+          </div>
+          <p class="mt-3 text-sm md:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors duration-300">Secure Checkout</p>
+          <p class="text-xs text-gray-500">100% safe transactions</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="group hover:-translate-y-1 transition-transform duration-300">
+          <div class="relative">
+            <img src="images/features/f6.png" alt="Easy Returns" class="w-32 md:w-36 lg:w-40 mx-auto object-contain group-hover:scale-110 transition-transform duration-300 feature-icon">
+            <div class="absolute inset-0 bg-indigo-500 opacity-0 group-hover:opacity-10 rounded-full transition-opacity duration-300"></div>
+          </div>
+          <p class="mt-3 text-sm md:text-base text-gray-700 font-medium group-hover:text-indigo-600 transition-colors duration-300">Easy Returns</p>
+          <p class="text-xs text-gray-500">Hassle-free policy</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .feature-icon {
+    transition: all 0.3s ease;
+  }
+
+  .feature-icon:hover {
+    animation: float 2s ease-in-out infinite;
+  }
+</style>
+
+<!-- New Arrivals Section -->
+
+<section class="py-16 px-6 bg-gradient-to-r from-blue-300 via-green-300 to-pink-200 text-gray-900 max-h-[1290px] overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Section Headings -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-extrabold mb-4">New Arrivals</h2>
+      <p class="text-lg text-gray-600">Just dropped! AI-curated looks you haven’t seen before.</p>
+    </div>
+
+    <!-- Grid Layout for New Arrivals Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+
+          <!-- New Arrivals Card 1 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/2.2.jpg" alt="Hat" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Hat</h3>
+              <p class="text-sm text-gray-500">For Men/Woman</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$7.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Hat')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Hat')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Summer Dress</li>
+                  <li>Try with Shorts</li>
+                  <li>Weather Fit: Summer</li>
+                  <li>Occasion: Casual</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    
+          <!-- New Arrivals Card 2 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="absolute top-2 left-2 bg-green-500 text-black text-xs font-bold px-2 py-1 rounded-full z-10">10% Off</div>
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/n2.jpg" alt="Jacket" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Jacket</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <p class="text-gray-500 line-through text-sm">$62.99</p>
+              <p class="text-blue-600 font-semibold">$52.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Jacket')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Jacket')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with T-Shirt</li>
+                  <li>Try with Branded Watch</li>
+                  <li>Weather Fit: Winter</li>
+                  <li>Occasion: Formal Events</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- New Arrivals Card 3 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/n3.webp" alt="Smart Watch" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Smart Watch</h3>
+              <p class="text-sm text-gray-500">For Women</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$28.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Smart Watch')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Smart Watch')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with High Heels</li>
+                  <li>Try with Jewellery</li>
+                  <li>Weather Fit: Any</li>
+                  <li>Occasion: Wedding</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- New Arrivals Card 4 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="absolute top-2 left-2 bg-yellow-500 text-Black text-xs font-bold px-2 py-1 rounded-full z-10">20% Off</div>
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/n4.jpg" alt="Printed Shirt" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Printed Shirt</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <p class="text-gray-500 line-through text-sm">$32.00</p>
+              <p class="text-blue-600 font-semibold">$18.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Printed Shirt')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Printed Shirt')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Shorts</li>
+                  <li>Try with Hat</li>
+                  <li>Weather Fit: Summer</li>
+                  <li>Occasion: Casual</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- New Arrivals Card 5 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/n5.webp" alt="High Heels" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">High Heels</h3>
+              <p class="text-sm text-gray-500">For Women</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$38.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('High Heels')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('High Heels')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Black Flared Skirt</li>
+                  <li>Try with Blazer</li>
+                  <li>Weather Fit: Any</li>
+                  <li>Occasion: Wedding</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- New Arrivals Card 6 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="absolute top-2 left-2 bg-pink-400 text-Black text-xs font-bold px-2 py-1 rounded-full z-10">30% Off</div>
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/n6.webp" alt="Stylish Shoe" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Stylish Shoe</h3>
+              <p class="text-sm text-gray-500">For Women</p>
+              <p class="text-gray-500 line-through text-sm">$50.00</p>
+              <p class="text-blue-600 font-semibold">$30.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Stylish Shoe')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Stylish Shoe')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Blouse</li>
+                  <li>Try with Jewellery</li>
+                  <li>Weather Fit: Any</li>
+                  <li>Occasion: Informal Events</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- New Arrival Card 7 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/n7.webp" alt="Branded Watch" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Branded Watch</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$99.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Branded Watch')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Branded Watch')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Jacket</li>
+                  <li>Try with Oxford Shoes</li>
+                  <li>Weather Fit: Winter, Fall</li>
+                  <li>Occasion: Formal Events</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- New Arrivals Card 8 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="absolute top-2 left-2 bg-green-500 text-black text-xs font-bold px-2 py-1 rounded-full z-10">10% Off</div>
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/n8.jpg" alt="Jewellery" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Jewellery</h3>
+              <p class="text-sm text-gray-500">For Women</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$25.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Jewellery')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Jewellery')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Black Flared Skirt</li>
+                  <li>Try with Stylish Shoe</li>
+                  <li>Weather Fit: Any</li>
+                  <li>Occasion: Informal Events</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- New Arrivals Card 9 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Sale</div>
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/n9.jpg" alt="Stop Watch" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Stop Watch</h3>
+              <p class="text-sm text-gray-500">For Men/Women</p>
+              <p class="text-gray-500 line-through text-sm">$9.00</p>
+              <p class="text-blue-600 font-semibold">$6.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Stop Watch')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Stop Watch')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with Hat</li>
+                  <li>Try with Pant</li>
+                  <li>Weather Fit: Any</li>
+                  <li>Occasion: Casual</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- New Arrivals Card 10 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/f1.3.jpg" alt="Shorts" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Shorts</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$12.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Shorts')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Shorts')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Pair with T-Shirt</li>
+                  <li>Try with Sandles</li>
+                  <li>Weather Fit: Summer,Sping</li>
+                  <li>Occasion: Casual</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+    </div> 
+  </div>
+</section>
+
+<!-- New Arrivals Section -->
+
+
+<section class="relative flex items-center justify-center overflow-hidden">
+  <!-- Background image with equation -->
+  <div class="absolute opacity-90 flex items-center justify-center">
+    <img src="images/banner/b2.jpg" alt="Equation background" class="">
+  </div>
+  
+  <!-- Newsletter content   backdrop-blur-sm-->
+<div class="relative z-10 w-full mx-auto p-10 rounded-xl shadow-lg border h-[345px] border-gray-500">
+    <div class="text-center">
+      <h1 class="text-5xl font-bold text-gray-800 dark:text-gray-100 mb-2 pb-1" style="transform: translateX(-100px);">Stay Updated</h1>
+      <p class="text-gray-600 dark:text-gray-300 mb-6 pb-12" style="transform: translateX(-100px);">Subscribe to our newsletter for the latest insights</p>
+      
+      <!-- Modified form section with stacked elements -->
+      <form class="flex flex-col items-center w-full max-w-lg mx-auto">
+        <div class="relative w-full">
+          <input 
+            type="email" 
+            placeholder="Your email address" 
+            class="w-full py-2 rounded-[21px] border border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 
+             bg-white bg-opacity-20 backdrop-blur-sm backdrop-filter"
+              style="
+              color: #dbdee4;
+              padding-left: 24px;
+              padding-right: 24px;
+              width: calc(100% + 80px);
+              margin-left: -440px; /* Left extension amount */
+              margin-right: -260px; /* Right extension amount */
+              min-width: 1000px; /* Minimum width */
+            "
+            required
+          >
+        </div>
+        <button 
+          type="submit" 
+          class="mt-4 w-full rounded-[21px] py-2 bg-blue-700 text-white font-medium rounded-lg hover:bg-blue-800 transition-colors shadow-md"
+          style="
+            width: calc(100% + 80px);
+            margin-left: -440px; /* Left extension amount */
+            margin-right: -260px; /* Right extension amount */
+            min-width: 1000px; /* Minimum width */
+          "
+        >
+          Subscribe
+        </button>
+      </form>
+      
+      <p class="text-xs mt-4 text-gray-600 dark:text-gray-300 mb-6 pb-12" style="transform: translateX(-100px);">We respect your privacy. Unsubscribe at any time.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="py-16 px-6 bg-gradient-to-r from-blue-300 via-green-300 to-pink-200 text-gray-900 max-h-[1290px] overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Section Headings -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-extrabold mb-4">COMING SOON</h2>
+      <p class="text-lg text-gray-600">Pre-Order Your Passion. Be the first to unlock future fashion, curated by AI, limited drops, unlimited style.</p>
+    </div>
+
+    <!-- Grid Layout for New Arrivals Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+
+          <!-- Coming Soon Card 1 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/c1.jpg" alt="Blouse" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Blouse</h3>
+              <p class="text-sm text-gray-500">For Woman</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$22.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Blouse')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Blouse')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Coming Soon.....</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coming Soon Card 2 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/c2.jpg" alt="Blazer" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Blazer</h3>
+              <p class="text-sm text-gray-500">For Woman</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$47.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Blazer')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Blazer')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Coming Soon.....</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coming Soon Card 3 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/c3.jpg" alt="Pant" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Pant</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$34.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Pant')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Pant')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Coming Soon.....</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coming Soon Card 4 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/c4.jpg" alt="Sports Wear" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">Sports Wear</h3>
+              <p class="text-sm text-gray-500">For Men</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$53.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('Sports Wear')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('Sports Wear')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Coming Soon.....</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coming Soon Card 5 -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition inline-block w-[220px] shrink-0 mb-16 border-2 border-transparent hover:border-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div class="relative">
+              <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl">
+                <img src="images/c5.jpg" alt="High Heels" class="max-h-full max-w-full object-contain rounded-t-2xl" />
+              </div>
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="text-lg font-bold">High Heels</h3>
+              <p class="text-sm text-gray-500">For Women</p>
+              <div class="pb-5"></div>
+              <p class="text-blue-600 font-semibold">$41.99</p>
+              <div class="mt-4 flex flex-col gap-2">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-full" onclick="addToCart('High Heels')">Add to Cart</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full" onclick="openModal('High Heels')">View Details</button>
+              </div>
+              <button class="text-indigo-600 text-xs mt-3 font-semibold hover:underline rounded-full block mx-auto text-center" onclick="toggleAISuggestions(this)">
+                <i class="fas fa-wand-magic-sparkles"></i> Try with AI Style
+              </button>
+              <div class="hidden mt-2 text-xs text-gray-600 suggestion-box">
+                <p class="font-semibold mb-1">AI Suggests:</p>
+                <ul class="list-disc list-inside text-xs text-left">
+                  <li>Coming Soon.....</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+    </div> 
+  </div>
+</section>          
+
+</main>
+
+
+    <!-- Footer Section -->
+
+        <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="icons/logo.png" alt="Company Logo"> <!-- Replace with your logo -->
+                <p>&copy; <span id="year"></span> <strong>AI-Driven Fashion.</strong> All rights reserved.</p>
+                <script>
+                  document.getElementById("year").textContent = new Date().getFullYear();
+                </script>
+            </div>
+            <div class="footer-right">
+                <div class="social-icons">
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Section -->
+
+    <!-- Javascript Files Linked -->
+
+    <script src="shop.js"></script>
