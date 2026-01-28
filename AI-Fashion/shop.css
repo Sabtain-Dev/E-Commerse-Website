@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background-image: url('images/12.jpg');
+    background-size: cover; /* This makes the background image cover the entire screen */
+    background-attachment: fixed; /* This makes the background image stay in place while scrolling */
+    background-repeat: no-repeat; /* This prevents the background image from repeating */
+    background-position: center; /* This centers the background image */
+}
+
+/* Navbar CSS */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    color: #080808;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.9s ease;
+    border-radius: 0 0 10px 10px;
+    height: 55px;
+}
+
+header.scrolled {
+    background-color: #bdbdbd00;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 238, 0.37);
+    border: 0px solid rgba(255, 255, 255, 0.18);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 55px;
+    cursor: pointer;
+    padding-left: 12px;
+}
+
+header .logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+header .logo .logo-text {
+    margin-left: 10px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-right: 12px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li a i {
+    font-size: 1.2em;
+}
+
+header.navbar-scrolled nav ul li a {
+    color: black;
+}
+
+header.navbar-scrolled nav ul li.active a {
+    color: rgba(0, 0, 0, 0.911);
+}
+
+header.navbar-scrolled .logo-text {
+    color: black;
+}
+
+header.navbar-scrolled nav ul li a:hover {
+    color: #007bff;
+}
+
+header nav ul li.active a {
+    border-bottom: 3px solid #ff4081;
+    color: #fff;
+    pointer-events: none;
+    font-weight: 700; 
+}
+
+header nav ul li a:hover {
+    border-top: 3px solid #ff4081;
+    color: #FFD700;
+    font-weight: 600;
+}
+
+/* Navbar CSS */
+
+/* Footer Section CSS */
+
+footer {
+    background-color: #ffffff8f;
+    color: #000000;
+    padding: 13px 0;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid #e5e5e5;
+    border-radius: 8px;
+}
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+footer .footer-content .footer-left,
+footer .footer-content .footer-right {
+    display: flex;
+    align-items: center;
+}
+footer .footer-content .footer-left img {
+    height: 35px;
+    margin-right: 10px;
+}
+footer .footer-content .footer-left p {
+    margin: 0;
+}
+footer .social-icons a {
+    color: #555;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+footer .social-icons a:hover {
+    color: #000;
+}
+
+/* Footer Section CSS */
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  animation: gradient 8s ease infinite;
+}
+
+/* Hide scrollbar but keep scrolling functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.suggestion-box {
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+}
+ 
