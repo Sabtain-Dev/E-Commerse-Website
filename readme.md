@@ -116,8 +116,9 @@ If images do not load, ensure:
 5. React or MERN conversion
 
 ## 📌 Author
-Muhammad Sabtain Khan
-GitHub: https://github.com/Sabtain-Dev
+- Muhammad Sabtain Khan
+- GitHub: https://github.com/Sabtain-Dev
 
 ## 📄 License
 This project is intended for educational, academic, and portfolio use.
+
